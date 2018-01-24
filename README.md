@@ -17,7 +17,7 @@ Here is a simple Balance Text setup:
   <style type="text/css">
   /* Plugin looks for elements with class named "balance-text" */
   .balance-text {
-      text-wrap: balanced;  /* Apply (proposed) CSS style */
+      text-wrap: balance;  /* Apply (proposed) CSS style */
   }
   </style>
 
@@ -77,9 +77,9 @@ You can also migrate to `balanceText()` from jQuery using this guide (shown comp
 ```
 
 ## Use from a CDN
-[//cdnjs.cloudflare.com/ajax/libs/balance-text/3.0.0/balancetext.min.js](//cdnjs.cloudflare.com/ajax/libs/balance-text/3.0.0/balancetext.min.js)
+[//cdnjs.cloudflare.com/ajax/libs/balance-text/3.2.0/balancetext.min.js](//cdnjs.cloudflare.com/ajax/libs/balance-text/3.2.0/balancetext.min.js)
 
-[//cdn.jsdelivr.net/balancetext/3.0.0/balancetext.min.js](//cdn.jsdelivr.net/balancetext/3.0.0/balancetext.min.js)
+[//cdn.jsdelivr.net/npm/balance-text@3.2.0/balancetext.min.js](//cdn.jsdelivr.net/npm/balance-text@3.2.0/balancetext.min.js)
 
 
 ### Legacy (2.0.0)
@@ -108,6 +108,26 @@ We minify using Uglify-JS
 npm run build
 ```
 
+### Creating a new Release
+
+1. Pull Request:
+
+    * Update version numbers: package.json, bower.json
+    * Update minifed version, if necessary: balancetext.min.js
+    * Update README.md, including links to new not-yet-created CDNs
+
+1. Create new github Release
+
+    * cloudflare CDN is automatically created
+
+1. Update npm
+
+    * `npm publish`
+    * jsdeliver CDN is automatically created
+
+1. Update vanity page: gh-pages branch
+
+
 ## Changelog
 * v 1.0.x - Initial Release, bug fix by chrisbank, better break point detection mmcgahan
 * v 1.1.0 - Fix bugs submitted by rodneyrehm, colmjude
@@ -119,3 +139,5 @@ npm run build
 * v 1.7.0 - Hack for partially working with jQuery 3, remove deprecation warning
 * v 2.0.0 - Fix automatic updating of custom selectors for jQuery 3 (bfred-it)
 * v 3.0.0 - Remove the jQuery dependency (BrianGenisio, bfred-it)
+* v 3.1.x - Support for hyphens, white-space:nowrap
+* v 3.2.0 - Support for unwatch (weotch)
